@@ -1,0 +1,39 @@
+#home {
+  align-self: center;
+  gap: 2vmax;
+  position: relative;
+  text-align: center;
+}
+
+#home > *:not(figure) {
+  grid-column: 1;
+  gap: inherit;
+}
+h1 {
+  font-size: 3rem;
+}
+@media (max-width: 800px) {
+  figure {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1vmax;
+  }
+}
+@media (min-width: 800px) {
+  #home {
+    grid-column: 1 / -1;
+    grid-template-columns: inherit;
+    position: static;
+  }
+  figure {
+    width: 100%;
+    grid-column: 2;
+    position: absolute;
+    justify-self: end;
+    inset-block: 0;
+    overflow: hidden;
+  }
+  figure > * {
+    grid-row: 1;
+    grid-column: 1;
+  }
+}
