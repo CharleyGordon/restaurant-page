@@ -1,9 +1,28 @@
-nav {
-  width: 100%;
+#content nav {
+  order: -1;
+  grid-column: 1 / -1;
+  text-transform: capitalize;
 }
 
 nav ul {
   justify-items: center;
   padding: 2rem;
   outline: 1px solid;
+}
+
+#home ~ nav {
+  grid-column: 1;
+}
+:not(#home) ~ nav {
+  animation: change-width 0.5s ease;
+}
+
+@keyframes change-width {
+  from {
+    grid-column: 1;
+    max-width: 50%;
+  }
+  to {
+    max-width: 100%;
+  }
 }

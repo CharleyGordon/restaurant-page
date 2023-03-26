@@ -1,0 +1,86 @@
+#menu {
+  align-self: stretch;
+  font-size: 1.4rem;
+}
+#menu hr {
+  margin-block: 2rem 1rem;
+}
+#menu li > span[class] {
+  font-size: 3rem;
+}
+#menu details summary {
+  transition: font-size 0.5s, filter 0.8s;
+}
+
+#menu summary {
+  display: flex;
+  list-style: none;
+  cursor: pointer;
+}
+#menu summary:is(:hover, :focus) {
+  font-size: 1.5rem;
+}
+#menu details summary::before {
+  content: "";
+  background-repeat: no-repeat;
+  background-image: url("../img/menu/fork.svg");
+  width: 1em;
+  aspect-ratio: 1;
+  display: inline-block;
+  background-size: contain;
+  margin-inline-end: 0.5rem;
+}
+
+#menu details[open] summary {
+  font-size: 1.7rem;
+  filter: hue-rotate(30deg);
+}
+#menu details[open] summary::before {
+  background-image: url("../img/menu/spoon.svg");
+}
+details .dish {
+  margin-inline-end: 2rem;
+}
+details .price {
+  --saturation: 15%;
+  --lightness: 44%;
+  margin-inline-start: auto;
+  font-style: oblique;
+  color: hsl(233, var(--saturation), var(--lightness));
+  transition: color 0.2s ease-in-out;
+}
+details[open] .price {
+  --saturation: 40%;
+  --lightness: 74%;
+}
+/* overview */
+details .overview {
+  max-width: 400px;
+  margin: 0 auto;
+  aspect-ratio: 3 / 4;
+  scale: 0;
+  margin-block: 1rem;
+  box-shadow: inset 1px 1px 2px 3px hsl(271, 32%, 29%),
+    -1px -1px 2px 3px hsl(271, 32%, 29%);
+  transition: scale 0.6s ease;
+}
+details[open] .overview {
+  position: relative;
+  scale: 1;
+  padding: 2rem;
+  border: 2px solid;
+}
+.overview img {
+  object-fit: contain;
+  position: relative;
+  z-index: 0;
+}
+.overview figcaption {
+  position: absolute;
+  padding: inherit;
+  inset-inline: 0;
+  bottom: 0;
+  z-index: 1;
+  mix-blend-mode: multiply;
+  background: rgb(19, 51, 51);
+}
