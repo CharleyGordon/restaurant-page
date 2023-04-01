@@ -12,6 +12,10 @@ in root directory, type the following:
 
 ![](./screenshot.png)
 
+###live preview
+
+(https://charleygordon.github.io/restaurant-page/#menu)
+
 ### images used for project:
 
 - https://unsplash.com/photos/vA1L1jRTM70
