@@ -1,9 +1,10 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizer = require("css-minimizer-webpack-plugin");
 
 module.exports = {
-  mode: "development",
+  mode: "production",
   entry: {
     main: path.resolve(__dirname, "./src/main.js"),
   },
@@ -52,5 +53,9 @@ module.exports = {
         use: ["html-loader"],
       },
     ],
+  },
+  optimization: {
+    minimizer: [new CssMinimizer()],
+    minimize: true,
   },
 };
