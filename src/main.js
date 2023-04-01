@@ -1,5 +1,5 @@
 import "./modules/style";
-import injectHtml from "./modules/template";
+import { restoreUrl, pageHandler } from "./modules/template";
 
-const content = document.getElementById("content");
-injectHtml(content);
+restoreUrl(pageHandler);
+// const content = document.getElementById("content");

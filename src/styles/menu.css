@@ -4,7 +4,7 @@
   font-size: 1.5rem;
 }
 #menu hr {
-  margin-block: 2rem 1rem;
+  margin-block-start: 2rem;
 }
 #menu li > span[class] {
   font-size: 3rem;
@@ -86,7 +86,7 @@ details .overview {
 }
 details[open] .overview {
   position: relative;
-  animation: appear 0.5s ease forwards;
+  animation: appear 0.5s ease forwards 0.2s;
   border: 2px solid;
 }
 .overview img {

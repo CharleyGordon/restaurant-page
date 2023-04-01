@@ -1,5 +1,5 @@
 export * from "../fonts/Unique.ttf";
-
+export * from "../styles/contact.css";
 export * from "../styles/display.css";
 export * from "../styles/navbar.css";
 export * from "../styles/home.css";

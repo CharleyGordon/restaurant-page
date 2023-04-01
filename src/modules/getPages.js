@@ -6,10 +6,7 @@ const getPages = function (event) {
   if (section) {
     const link = section.dataset.refference;
     pubsub.publish("pageChanged", content, link);
-    // return href;
   }
 };
-
-// pubsub.subscribe("pageRequest", getPages);
 
 export default getPages;

@@ -1,0 +1,46 @@
+#contact {
+  place-self: center;
+  padding: 1rem;
+}
+#contact adress {
+  text-align: end;
+  font-size: 1.5rem;
+}
+#contact adress dt {
+  color: hsl(0, 0%, 45%);
+  font-size: 1.2em;
+}
+#contact adress,
+#contact adress > * {
+  gap: 2rem;
+}
+#contact h2 {
+  font-style: oblique;
+  font-size: 2.4rem;
+  text-transform: uppercase;
+}
+#contact .socials a {
+  --shadow: 1px 1px 0.2px white;
+  display: block;
+  width: 40px;
+  aspect-ratio: 1;
+  scale: 0.95;
+  background-size: contain;
+  filter: drop-shadow(var(--shadow));
+  transition: filter 0.5s ease, scale 0.5s ease;
+}
+#contact .socials a:hover {
+  --shadow: 1px 1px 0.5px orangered;
+  --shadow2: -1px -1px 1px aqua;
+  filter: drop-shadow(var(--shadow)) drop-shadow(var(--shadow2));
+  scale: 1;
+}
+[href$="youtube.com"] {
+  background-image: url("../img/contact/youtube.svg");
+}
+[href$="instagram.com"] {
+  background-image: url("../img/contact/instagram.svg");
+}
+[href$="twitter.com"] {
+  background-image: url("../img/contact/twitter.svg");
+}

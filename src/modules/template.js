@@ -18,7 +18,11 @@ import getPages from "./getPages";
 
 import adjustNav from "./adjustNav";
 
+import distinctCurrent from "./distinctCurrent";
+
 import restoreUrl from "./restoreUrl";
+
+const nav = document.querySelector("#content nav");
 
 adjustNav();
 
@@ -30,7 +34,6 @@ const pageHandler = {
   contact,
   menuOverview,
 };
-restoreUrl(pageHandler);
 
 const injectHtml = function (parent, target = "home") {
   const article = parent.querySelector("article");
@@ -42,7 +45,7 @@ const injectHtml = function (parent, target = "home") {
     convertHtml(pageHandler[target]),
     parent.querySelector("nav")
   );
-  // pubsub.publish("checkHome");
+  pubsub.publish("newCurrent", nav, target);
 };
 pubsub.subscribe("pageChanged", injectHtml);
 
@@ -54,21 +57,19 @@ const inserOverview = function (event) {
     if (sibling) return;
     const details = summary.closest("details");
     const dishName = summary.querySelector(".dish-name").textContent.trim();
-    console.dir(dishName);
     const menuOverviewObj = convertHtml(menuOverview);
     const ingredients = "ingredients: ".concat(
       dishes.getIngredients(dishName).join(", ")
     );
     menuOverviewObj.querySelector("img").src = dishes[dishName].image;
     menuOverviewObj.querySelector("figcaption").textContent = ingredients;
-    console.dir(ingredients);
     details.appendChild(menuOverviewObj);
-    // menuOverviewObj.classList.add("overview");
   }
 };
 
 document.querySelector("nav").addEventListener("click", getPages);
 document.querySelector("nav").addEventListener("click", runningHeader);
 document.body.addEventListener("click", inserOverview);
+window.addEventListener("popstate", () => restoreUrl(pageHandler));
 
-export default injectHtml;
+export { restoreUrl, pageHandler };
