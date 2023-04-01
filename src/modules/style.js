@@ -5,3 +5,4 @@ export * from "../styles/navbar.css";
 export * from "../styles/home.css";
 export * from "../styles/menu.css";
 export * from "../styles/fonts.css";
+document.querySelector("html").style.visibility = "visible";

@@ -3,6 +3,7 @@
   padding: 1rem;
 }
 #contact adress {
+  margin-block-end: 2rem;
   text-align: end;
   font-size: 1.5rem;
 }

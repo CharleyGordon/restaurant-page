@@ -76,7 +76,7 @@ details[open] .price {
 }
 /* overview */
 details .overview {
-  max-width: fit-content;
+  max-width: 400px;
   margin: 0 auto;
   aspect-ratio: 3 / 4;
   scale: 0;
