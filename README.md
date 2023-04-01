@@ -14,7 +14,7 @@ in root directory, type the following:
 
 ### live preview
 
-(https://charleygordon.github.io/restaurant-page/#menu)
+[live code](https://charleygordon.github.io/restaurant-page/#menu)
 
 ### images used for project:
 
