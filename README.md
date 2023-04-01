@@ -12,7 +12,7 @@ in root directory, type the following:
 
 ![](./screenshot.png)
 
-###live preview
+### live preview
 
 (https://charleygordon.github.io/restaurant-page/#menu)
 
