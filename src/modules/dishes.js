@@ -1,0 +1,161 @@
+import soup from "../img/menu/soup.jpg";
+import greekYogurt from "../img/menu/greek-yogurt.jpg";
+import grilldSalomon from "../img/menu/grilled-salomon.jpg";
+import grilledTofu from "../img/menu/grilled-tofu.jpg";
+import shrimp from "../img/menu/shrimp.jpg";
+import tunaSalad from "../img/menu/tuna-salad.jpg";
+import turkey from "../img/menu/turkey.jpg";
+import beefWithRice from "../img/menu/beef-with-rice.jpg";
+import backedPotato from "../img/menu/baked-potato.jpg";
+
+const dishes = {
+  "Lentil soup with whole wheat bread": {
+    ingredients: [
+      "Olive oil",
+      "Onion Garlic",
+      "Carrots Celery",
+      "Cumin",
+      "Coriander",
+      "Smoked paprika",
+      "Thyme Brown lentils",
+      "Low-sodium vegetable broth",
+      "Diced tomatoes",
+      "Bay leaf",
+      "Salt",
+      "Pepper",
+      "Fresh parsley",
+    ],
+    image: soup,
+  },
+  "Greek yogurt parfait with granola and fresh fruit": {
+    ingredients: [
+      "Greek yogurt",
+      "1/2 cup granola",
+      "fresh berries (strawberries, blueberries, or raspberries)",
+      "honey",
+      "chopped nuts(such as almonds or walnuts)",
+    ],
+    image: greekYogurt,
+  },
+  "Grilled tofu with brown rice and mixed vegetables": {
+    ingredients: [
+      "Firm tofu",
+      "Brown rice",
+      "Water",
+      "Red bell pepper",
+      "Yellow bell pepper",
+      "Zucchini",
+      "Red onion",
+      "Olive oil",
+      "Soy sauce",
+      "Garlic powder",
+      "Salt",
+      "Pepper",
+    ],
+    image: grilledTofu,
+  },
+  "Baked sweet potato topped with black beans, salsa, and avocado": {
+    ingredients: [
+      "Sweet potatoes",
+      "Black beans",
+      "Salsa",
+      "Avocado",
+      "Olive oil",
+      "Salt",
+      "Pepper",
+    ],
+    image: backedPotato,
+  },
+  "Beef stir-fry with brown rice and broccoli": {
+    ingredients: [
+      "Beef",
+      "Brown rice",
+      "Water",
+      "Broccoli",
+      "Soy sauce",
+      "Garlic",
+      "Ginger",
+      "Cornstarch",
+      "Sugar",
+      "Salt",
+      "Pepper",
+      "Vegetable oil",
+    ],
+    image: beefWithRice,
+  },
+  "Tuna salad with whole grain crackers and mixed greens": {
+    ingredients: [
+      "Canned tuna",
+      "Greek yogurt",
+      "Celery",
+      "Red onion",
+      "Lemon juice",
+      "Dijon mustard",
+      "Salt",
+      "Pepper",
+      "Mixed greens",
+      "Whole grain crackers",
+    ],
+    image: tunaSalad,
+  },
+  "Grilled salmon with sweet potato and green beans": {
+    ingredients: [
+      "Salmon fillets",
+      "Sweet potatoes",
+      "Green beans",
+      "Olive oil",
+      "Salt",
+      "Pepper",
+      "Garlic powder",
+      "Lemon juice",
+    ],
+    image: grilldSalomon,
+  },
+  "Shrimp and vegetable stir-fry with brown rice": {
+    ingredients: [
+      "Shrimp",
+      "Brown rice",
+      "Water",
+      "Broccoli",
+      "Red bell pepper",
+      "Carrots",
+      "Garlic",
+      "Ginger",
+      "Soy sauce",
+      "Sesame oil",
+      "Cornstarch",
+      "Sugar",
+      "Salt",
+      "Pepper",
+      "Vegetable oil",
+    ],
+    image: shrimp,
+  },
+  "Turkey chili with cornbread muffins": {
+    ingredients: [
+      "Ground turkey",
+      "Onion",
+      "Bell pepper",
+      "Garlic",
+      "Cumin",
+      "Chili powder",
+      "Cayenne pepper",
+      "Salt",
+      "Black beans",
+      "Diced tomatoes",
+      "Tomato sauce",
+      "Corn",
+      "Cornmeal",
+      "Flour",
+      "Baking powder",
+      "Salt",
+      "Egg",
+      "Milk",
+      "Honey",
+      "Butter",
+    ],
+    image: turkey,
+  },
+  getIngredients: (dish) => dishes[dish].ingredients,
+};
+export default dishes;

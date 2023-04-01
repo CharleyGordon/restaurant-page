@@ -1,7 +1,13 @@
+:root {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--nav-height, 4rem);
+}
 #content nav {
-  order: -1;
   grid-column: 1 / -1;
+  max-width: 100%;
+  order: -1;
   text-transform: capitalize;
+  transition: max-width 0.6s ease;
 }
 
 nav ul {
@@ -11,18 +17,5 @@ nav ul {
 }
 
 #home ~ nav {
-  grid-column: 1;
-}
-:not(#home) ~ nav {
-  animation: change-width 0.5s ease;
-}
-
-@keyframes change-width {
-  from {
-    grid-column: 1;
-    max-width: 50%;
-  }
-  to {
-    max-width: 100%;
-  }
+  max-width: 50%;
 }

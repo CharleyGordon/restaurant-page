@@ -5,7 +5,6 @@ const getPages = function (event) {
   const content = section.closest("#content");
   if (section) {
     const link = section.dataset.refference;
-    console.dir(link);
     pubsub.publish("pageChanged", content, link);
     // return href;
   }
