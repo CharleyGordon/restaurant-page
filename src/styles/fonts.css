@@ -1,0 +1,10 @@
+@font-face {
+  font-family: "Unique";
+  src: url("../fonts/Unique.ttf");
+}
+:root {
+  font-family: "Unique";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: normal;
+}

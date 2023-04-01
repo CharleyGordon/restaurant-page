@@ -1,0 +1,60 @@
+:root {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--nav-height, 4rem);
+}
+#content nav {
+  grid-column: 1 / -1;
+  max-width: 100%;
+  order: -1;
+  text-transform: capitalize;
+  transition: max-width 0.6s ease;
+}
+#content nav a {
+  --lightness: 100%;
+  display: inline-block;
+  color: hsl(0, 0%, var(--lightness));
+  transition: color 0.5s, scale 0.6s;
+}
+#content nav a:not(.current, :hover, :focus) {
+  scale: 0.8;
+  --lightness: 45%;
+}
+nav ul {
+  justify-items: center;
+  padding: 2rem;
+  outline: 1px solid;
+  font-size: 1.7rem;
+}
+@media (max-width: 600px) {
+  #content nav ul {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    flex-flow: column;
+    background-color: hsl(230, 13%, 27%);
+    z-index: 2;
+    transition: translate 0.6s ease;
+  }
+  #content nav:not(:target) ul {
+    translate: -100vmax;
+  }
+  #content a.mobile-anchor {
+    left: 10px;
+    padding: 1rem;
+    position: fixed;
+    content: "hello";
+    width: fit-content;
+    translate: 0;
+    z-index: 1;
+    background-image: url("../img/nav/open-menu.svg");
+    background-size: contain;
+  }
+}
+@media (min-width: 800px) {
+  #home ~ nav {
+    max-width: 50%;
+  }
+  .mobile-anchor {
+    display: none;
+  }
+}

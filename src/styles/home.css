@@ -1,0 +1,138 @@
+#home {
+  --expand-position: -2rem;
+  align-self: start;
+  gap: 2vmax;
+  position: relative;
+  text-align: center;
+}
+
+#home > *:not(figure) {
+  grid-column: 1;
+  gap: inherit;
+}
+#home figure {
+  padding: 3rem 1rem;
+}
+h1 {
+  font-size: 3rem;
+  filter: drop-shadow(1px -2px 10px black);
+}
+header .slogan {
+  line-height: 2rem;
+  height: 2rem;
+  overflow: hidden;
+}
+header .slogan > * {
+  position: absolute;
+  inset: 0;
+  translate: 0 -100%;
+  transition: 0.5s ease 0.5s;
+}
+header .slogan > :is(.current) {
+  translate: 0;
+  transition: 0.5s ease 1s;
+}
+
+:where(#home .about) .wrapper {
+  --height: 2rem;
+  --lines: 7;
+  line-height: var(--height);
+  max-height: calc(var(--height) * var(--lines));
+  gap: 2rem;
+  transition: max-height 0.5s ease;
+  padding: 2rem;
+  text-align: start;
+  font-size: 1.3rem;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.about input[type="checkbox"] {
+  bottom: var(--expand-position);
+  justify-self: center;
+  min-width: 20px;
+  aspect-ratio: 1;
+  cursor: pointer;
+  appearance: none;
+}
+.about input[type="checkbox"]:not(:checked) {
+  animation: click-me 1s infinite alternate linear;
+}
+.about input[type="checkbox"]::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  clip-path: polygon(100% 0, 100% 50%, 50% 100%, 0 50%, 0% 0%);
+  filter: drop-shadow(1px 1px 10px white);
+  background-color: hsl(203, 69%, 78%);
+  transition: rotate 0.5s linear;
+}
+.about input[type="checkbox"]:checked::before {
+  rotate: 180deg;
+}
+.about input[type="checkbox"]:checked ~ .wrapper {
+  max-height: 100%;
+}
+@media (max-width: 800px) {
+  figure {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1vmax;
+  }
+}
+@media (min-width: 800px) {
+  #home {
+    --expand-position: -1rem;
+    grid-column: 1 / -1;
+    align-self: center;
+    grid-template-columns: inherit;
+    position: static;
+  }
+  #home figure {
+    width: 100%;
+    grid-column: 2;
+    padding: 0;
+    position: absolute;
+    justify-self: end;
+    inset-block: 0;
+    overflow: hidden;
+  }
+  #home figure > * {
+    grid-row: 1;
+    grid-column: 1;
+  }
+  #home figure > picture {
+    opacity: 0;
+    animation: fade 6s infinite alternate var(--delay, 0s);
+  }
+  #home figure > .picture-2 {
+    --delay: 6s;
+  }
+  #home figure > .picture-3 {
+    --delay: 12s;
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes translate {
+  from {
+    translate: 100%;
+  }
+  to {
+    translate: 0;
+  }
+}
+@keyframes click-me {
+  from {
+    translate: 0;
+  }
+  to {
+    translate: 0 20%;
+  }
+}

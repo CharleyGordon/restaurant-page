@@ -1,0 +1,118 @@
+#menu {
+  align-self: stretch;
+  padding: 1vmax;
+  font-size: 1.5rem;
+}
+#menu hr {
+  margin-block-start: 2rem;
+}
+#menu li > span[class] {
+  font-size: 3rem;
+}
+#menu ul > * {
+  margin-block-start: 2rem;
+}
+#menu details {
+  --height: 2rem;
+  --lines: 1;
+  line-height: var(--height);
+  transition: max-height 0.5s ease;
+  margin-block-end: 6rem;
+}
+#menu details:not([open]) {
+  max-height: calc(var(--height) * var(--lines));
+}
+#menu details[open] {
+  max-height: 1000px;
+}
+#menu details summary {
+  transition: scale 0.5s, filter 0.8s;
+}
+
+#menu details summary {
+  display: flex;
+  list-style: none;
+  cursor: pointer;
+}
+#menu details summary:not(:hover, :focus) {
+  scale: 0.95;
+}
+#menu details summary::before {
+  --width: 1em;
+  --translation: calc(var(--width) * -1);
+  width: var(--width);
+  aspect-ratio: 1;
+  display: inline-block;
+  content: "";
+  background-repeat: no-repeat;
+  background-image: url("../img/menu/fork.svg"), url("../img/menu/spoon.svg");
+  background-position: center, 0 var(--translation);
+  background-size: 100%;
+  margin-inline-end: 0.5rem;
+  transition: background-position 0.5s ease;
+}
+
+#menu details[open] summary {
+  font-size: 1.7rem;
+  filter: hue-rotate(30deg);
+}
+#menu details[open] summary::before {
+  background-position: 0 var(--translation), center;
+}
+details .dish {
+  margin-inline-end: 2rem;
+}
+details .price {
+  --saturation: 15%;
+  --lightness: 44%;
+  margin-inline-start: auto;
+  font-style: oblique;
+  color: hsl(233, var(--saturation), var(--lightness));
+  transition: color 0.2s ease-in-out;
+}
+details[open] .price {
+  --saturation: 40%;
+  --lightness: 74%;
+}
+/* overview */
+details .overview {
+  max-width: 400px;
+  margin: 0 auto;
+  aspect-ratio: 3 / 4;
+  scale: 0;
+  margin-block: 1rem;
+  box-shadow: inset 1px 1px 2px 3px hsl(271, 32%, 29%),
+    -1px -1px 2px 3px hsl(271, 32%, 29%);
+}
+details[open] .overview {
+  position: relative;
+  animation: appear 0.5s ease forwards 0.2s;
+  border: 2px solid;
+}
+.overview img {
+  position: relative;
+  aspect-ratio: inherit;
+  max-width: 400px;
+  z-index: 0;
+}
+.overview figcaption {
+  position: absolute;
+  align-items: end;
+  padding: 2ch;
+  inset: 0;
+  bottom: 0;
+  z-index: 1;
+  background-image: linear-gradient(to bottom, transparent, black);
+  text-shadow: -1px -1px 2px #3c3f4e;
+  text-align: center;
+}
+@media (min-width: 800px) {
+  #menu details {
+    margin-block: 0;
+  }
+}
+@keyframes appear {
+  to {
+    scale: 1;
+  }
+}
